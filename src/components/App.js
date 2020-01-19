@@ -1,25 +1,29 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
-import HomePage from "./home/HomePage";
-import AboutPage from "./about/AboutPage";
-import Header from "./common/Header";
-import PageNotFound from "./PageNotFound";
-import CoursesPage from "./courses/CoursesPage";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import queryString from "query-string";
+import AppAccessMain from "./AppAccessMain";
+import DBAccessMain from "./DBAccessMain";
+
+function Request(props) {
+  const values = queryString.parse(props.location.search);
+  let requestTypeId = Number.parseInt(values.requestTypeId);
+  let serviceDeskId = Number.parseInt(values.serviceDeskId);
+
+  if (requestTypeId === 11 && serviceDeskId === 2) {
+    return <AppAccessMain />;
+  } else if (requestTypeId === 10 && serviceDeskId === 2) {
+    return <DBAccessMain />;
+  }
+  return <h1>no match</h1>;
+}
 
 function App() {
   const reload = () => window.location.reload();
   return (
-    <div className="container-fluid">
-      <Header />
-      <Switch>
-        <Route exact path="/" component={HomePage} />
-        <Route path="/about" component={AboutPage} />
-        <Route path="/courses" component={CoursesPage} />
-        <Route path="/atlassian-connect.json" onEnter={reload} />
-        <Route component={PageNotFound} />
-      </Switch>
-    </div>
+    <Router>
+      <Route path="/request" component={Request} />
+      <Route path="/atlassian-connect.json" onEnter={reload} />
+    </Router>
   );
 }
-
 export default App;
