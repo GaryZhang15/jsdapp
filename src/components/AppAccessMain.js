@@ -1,9 +1,10 @@
-/* eslint-disable no-undef */
 import React from "react";
+import { myObj } from "../jiratool";
+
+window.myObj = myObj;
 
 function AppAccessMain() {
-  proFormaFillin.registerPortalForm();
-
+  window.myObj.blurt();
   return <h1>hi from App access</h1>;
 }
 

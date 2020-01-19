@@ -3,15 +3,15 @@ var proFormaFillin = (function() {
 
   // Placeholder functions that allow request create to complete immediately if there is no ProForma form registered
 
-  var serializeFn = function() {
-    window.console && console.log("ProForma skipping serialize function");
-    new AP.jiraServiceDesk.RequestProperties().serialize();
-  };
+  // var serializeFn = function() {
+  //   window.console && console.log("ProForma skipping serialize function");
+  //   new AP.jiraServiceDesk.RequestProperties().serialize();
+  // };
 
-  var validateFn = function() {
-    window.console && console.log("ProForma skipping validate function");
-    new AP.jiraServiceDesk.RequestProperties().validate(true);
-  };
+  // var validateFn = function() {
+  //   window.console && console.log("ProForma skipping validate function");
+  //   new AP.jiraServiceDesk.RequestProperties().validate(true);
+  // };
 
   // Called by the UI when a form is available
 
