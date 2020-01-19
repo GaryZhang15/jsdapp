@@ -7,6 +7,7 @@ import PageNotFound from "./PageNotFound";
 import CoursesPage from "./courses/CoursesPage";
 
 function App() {
+  const reload = () => window.location.reload();
   return (
     <div className="container-fluid">
       <Header />
@@ -14,7 +15,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/courses" component={CoursesPage} />
-        <Route path="/atlassian-connect.json"  />
+        <Route path="/atlassian-connect.json" onEnter={reload} />
         <Route component={PageNotFound} />
       </Switch>
     </div>
