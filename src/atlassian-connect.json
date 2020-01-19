@@ -1,0 +1,24 @@
+{
+  "name": "Hello World...",
+  "description": "Atlassian Connect app",
+  "key": "com.example.myapp",
+  "baseUrl": "https://76154379.ngrok.io/",
+  "vendor": {
+    "name": "Example, Inc.",
+    "url": "http://example.com"
+  },
+  "authentication": {
+    "type": "none"
+  },
+  "scopes": ["read"],
+  "apiVersion": 1,
+  "modules": {
+    "serviceDeskPortalRequestCreatePropertyPanels": [
+      {
+        "key": "customer-portal-property-panel",
+        "url": "/",
+        "weight": 101
+      }
+    ]
+  }
+}

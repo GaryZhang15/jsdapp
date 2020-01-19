@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/a3e5ba4d-9091-4fbd-b325-ca9a203f9745/resourceGroups/reactapp/providers/Microsoft.Web/sites/reactaddon",
+    "appService.deploySubpath": "build"
+}
